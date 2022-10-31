@@ -1,4 +1,5 @@
 from .api import collections
+form .api import download
 
 def created_routes(app):
     
@@ -7,5 +8,11 @@ def created_routes(app):
         prefix='/api/collections', 
         tags=['Collections']
         )
+
+    app.include_router(
+        download.router,
+        prefix="/api/download",
+        tags=['Download']
+    )
     
     return app
